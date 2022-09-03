@@ -12,6 +12,9 @@ describe Solver do
     it 'should return 1 when input argument is 1' do
       expect(@solver.factorial(1)).to eql(1)
     end
+    it 'should return 1 when input argument us 0' do
+      expect(@solver.factorial(0)).to eql(1)
+    end
     it 'should return 120 when input argument is 5' do
       expect(@solver.factorial(5)).to eq(120)
     end
