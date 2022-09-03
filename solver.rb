@@ -1,8 +1,7 @@
 class Solver
   def factorial(num)
-    if num < 0
-      raise ArgumentError.new('Expected input argument to be a non-negative integer')
-    end
+    raise ArgumentError, 'Expected input argument to be a non-negative integer' if num.negative?
+
     (1..num).reduce(:*) || 1
   end
 
@@ -11,6 +10,14 @@ class Solver
   end
 
   def fizzbuzz(num)
-
+    if (num % 3).zero? && (num % 5).zero?
+      'fizzbuzz'
+    elsif (num % 3).zero?
+      'fizz'
+    elsif (num % 5).zero?
+      'buzz'
+    else
+      num.to_s
+    end
   end
 end
